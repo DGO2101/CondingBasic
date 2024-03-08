@@ -14,6 +14,7 @@ public partial class AdventureWorks2022Context : DbContext
         : base(options)
     {
     }
+    public virtual DbSet<SalesPerson> SalesPerson { get; set; }
     public virtual DbSet<Product> Product { get; set; }
     public virtual DbSet<Person> Person { get; set; }
     public virtual DbSet<Address> Addresses { get; set; }

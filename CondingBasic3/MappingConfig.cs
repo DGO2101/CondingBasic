@@ -10,6 +10,7 @@ namespace CondingBasic3
         {
             CreateMap<Person, PersonDto>().ReverseMap();
             CreateMap<Product,  ProductDto>().ReverseMap();
+            CreateMap<SalesPerson, SalesPersonDto>().ReverseMap();
         }
     }
 }

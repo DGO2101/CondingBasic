@@ -47,7 +47,17 @@ namespace CondingBasic3.Controllers
             var products = _context.Product
                 .Where(p => p.ProductSubcategory.ProductCategory.Name == type)
                 .ToList();
+
             var productDtos = _mapper.Map<List<ProductDto>>(products);
+
+            // Include ProductSubcategoryId in the mapping
+            foreach (var productDto in productDtos)
+            {
+                productDto.ProductSubcategoryId = products
+                    .FirstOrDefault(p => p.ProductId == productDto.ProductId)
+                    ?.ProductSubcategoryId;
+            }
+
             return Ok(productDtos);
         }
     }
