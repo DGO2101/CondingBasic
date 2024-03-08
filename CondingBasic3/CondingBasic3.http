@@ -1,0 +1,6 @@
+@CondingBasic3_HostAddress = http://localhost:5066
+
+GET {{CondingBasic3_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
